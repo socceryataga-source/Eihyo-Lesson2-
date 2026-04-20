@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pictogram Activity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section id="menu-screen" class="screen active">
+      <div class="card menu-card">
+        <h1 class="title">Pictogram Activity</h1>
+        <p class="subtitle">日本語 → Hint → Answer の順で確認します。</p>
+
+        <div class="menu-block">
+          <h2 class="block-title">出題方法</h2>
+          <div class="mode-grid">
+            <button class="mode-btn selected" data-mode="ordered" id="ordered-btn">順番通り</button>
+            <button class="mode-btn" data-mode="random" id="random-btn">ランダム</button>
+          </div>
+        </div>
+
+        <div class="menu-block">
+          <h2 class="block-title">出題範囲</h2>
+          <label class="range-label">
+            <span>開始番号</span>
+            <input type="number" id="start-num" min="1" value="1" />
+          </label>
+          <label class="range-label">
+            <span>終了番号</span>
+            <input type="number" id="end-num" min="1" value="11" />
+          </label>
+        </div>
+
+        <div class="menu-actions">
+          <button id="start-btn" class="primary-btn">Start</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="study-screen" class="screen">
+      <div class="card study-card">
+        <div class="topbar">
+          <div class="counter" id="counter">1 / 11</div>
+          <button id="back-menu-btn" class="ghost-btn">メニューに戻る</button>
+        </div>
+
+        <div class="image-wrap">
+          <img id="scene-image" src="" alt="pictogram" />
+        </div>
+
+        <div class="text-area">
+          <p id="jp-text" class="jp-text"></p>
+          <div id="hint-box" class="hint-box hidden"></div>
+          <div id="answer-box" class="answer-box hidden"></div>
+        </div>
+
+        <div class="controls">
+          <button id="hint-btn" class="action-btn">Hint</button>
+          <button id="answer-btn" class="action-btn">Answer</button>
+          <button id="next-btn" class="primary-btn">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="end-screen" class="screen">
+      <div class="card end-card">
+        <h2 class="title">Finished</h2>
+        <p class="subtitle">1周終了しました。</p>
+        <div class="menu-actions">
+          <button id="restart-btn" class="primary-btn">メニューに戻る</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
