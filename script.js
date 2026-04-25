@@ -89,6 +89,13 @@ function showAnswer() {
   renderStructuredHint(true);
 }
 
+function prevItem() {
+  if (!current) return;
+  if (currentIndex <= 0) return;
+  currentIndex -= 1;
+  renderCurrent();
+}
+
 function nextItem() {
   if (!current) return;
   currentIndex += 1;
